@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,14 +27,28 @@ class portfolio extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text(
-                    "A.W.C. Chamikara",
-                    style: GoogleFonts.poppins(
-                      fontSize: swidth > sheigth ? swidth * 0.06 : 25.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      height: 1.5,
-                    ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.arrowLeft,
+                        color: Colors.black,
+                        size: swidth > sheigth && swidth > 800
+                            ? swidth * 0.017
+                            : 13.0,
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        "A.W.C. Chamikara",
+                        style: GoogleFonts.poppins(
+                          fontSize: swidth > sheigth ? swidth * 0.06 : 25.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Text(
@@ -60,9 +75,22 @@ class portfolio extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Personal Info",
-                                  style: headingFont1(context),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.pencil,
+                                      size: swidth > sheigth && swidth > 800
+                                          ? swidth * 0.017
+                                          : 13.0,
+                                    ),
+                                    const SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      "Personal Info",
+                                      style: headingFont1(context),
+                                    ),
+                                  ],
                                 ),
                                 const Divider(
                                   height: 1.0,
@@ -98,9 +126,22 @@ class portfolio extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Contact Info",
-                                  style: headingFont1(context),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.phone,
+                                      size: swidth > sheigth && swidth > 800
+                                          ? swidth * 0.017
+                                          : 13.0,
+                                    ),
+                                    const SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      "Contact Info",
+                                      style: headingFont1(context),
+                                    ),
+                                  ],
                                 ),
                                 const Divider(
                                   height: 1.0,
@@ -130,9 +171,22 @@ class portfolio extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Skills",
-                                  style: headingFont1(context),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.graduationCap,
+                                      size: swidth > sheigth && swidth > 800
+                                          ? swidth * 0.017
+                                          : 13.0,
+                                    ),
+                                    const SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      "Skills",
+                                      style: headingFont1(context),
+                                    ),
+                                  ],
                                 ),
                                 const Divider(
                                   height: 1.0,
@@ -228,9 +282,22 @@ class portfolio extends StatelessWidget {
                               // SizedBox(
                               //   width: swidth * 0.5,
                               // ),
-                              Text(
-                                "Experiance",
-                                style: headingFont1(context),
+                              Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.briefcase,
+                                    size: swidth > sheigth && swidth > 800
+                                        ? swidth * 0.017
+                                        : 13.0,
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Experiance",
+                                    style: headingFont1(context),
+                                  ),
+                                ],
                               ),
                               const Divider(
                                 height: 1.0,
@@ -421,9 +488,22 @@ class portfolio extends StatelessWidget {
                               // SizedBox(
                               //   width: swidth * 0.5,
                               // ),
-                              Text(
-                                "Education",
-                                style: headingFont1(context),
+                              Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.graduationCap,
+                                    size: swidth > sheigth && swidth > 800
+                                        ? swidth * 0.017
+                                        : 13.0,
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Education",
+                                    style: headingFont1(context),
+                                  ),
+                                ],
                               ),
                               const Divider(
                                 height: 1.0,
@@ -588,9 +668,22 @@ class portfolio extends StatelessWidget {
                               // SizedBox(
                               //   width: swidth * 0.5,
                               // ),
-                              Text(
-                                "Certification",
-                                style: headingFont1(context),
+                              Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.certificate,
+                                    size: swidth > sheigth && swidth > 800
+                                        ? swidth * 0.017
+                                        : 13.0,
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Certification",
+                                    style: headingFont1(context),
+                                  ),
+                                ],
                               ),
                               const Divider(
                                 height: 1.0,
@@ -657,9 +750,22 @@ class portfolio extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Professional Qualifications",
-                                style: headingFont1(context),
+                              Row(
+                                children: [
+                                  Icon(
+                                    FontAwesomeIcons.handshake,
+                                    size: swidth > sheigth && swidth > 800
+                                        ? swidth * 0.017
+                                        : 13.0,
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Professional Qualifications",
+                                    style: headingFont1(context),
+                                  ),
+                                ],
                               ),
                               const Divider(
                                 height: 1.0,
