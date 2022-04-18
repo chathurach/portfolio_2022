@@ -19,26 +19,20 @@ class portfolio extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(sheigth * 0.05),
           child: SingleChildScrollView(
+            physics: const ClampingScrollPhysics(),
             scrollDirection: Axis.vertical,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextButton(
+                  style: ButtonStyle(
+                      overlayColor: MaterialStateProperty.all(Colors.black26)),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        FontAwesomeIcons.arrowLeft,
-                        color: Colors.black,
-                        size: swidth > sheigth && swidth > 800
-                            ? swidth * 0.017
-                            : 13.0,
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
                       Text(
                         "A.W.C. Chamikara",
                         style: GoogleFonts.poppins(
@@ -47,6 +41,16 @@ class portfolio extends StatelessWidget {
                           color: Colors.black,
                           height: 1.5,
                         ),
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Icon(
+                        FontAwesomeIcons.arrowLeft,
+                        color: Colors.black,
+                        size: swidth > sheigth && swidth > 800
+                            ? swidth * 0.017
+                            : 13.0,
                       ),
                     ],
                   ),
@@ -252,7 +256,7 @@ class portfolio extends StatelessWidget {
                                     Text("* ", style: bodyFont(context)),
                                     Flexible(
                                       child: Text(
-                                          "Dart,Python Frameworks - Flutter(Dart), P5(JavaScript), NetBeans(Java)",
+                                          "Frameworks - Flutter(Dart), P5(JavaScript), NetBeans(Java)",
                                           style: bodyFont(context)),
                                     ),
                                   ],
@@ -541,7 +545,7 @@ class portfolio extends StatelessWidget {
                                                   style: bodyFont(context)),
                                               Flexible(
                                                 child: Text(
-                                                    "Completed with overall GPA of 3.54 and reseach was published with the topic “Mesuerment of road Surface Undulations using a low cost accelerometer sensor",
+                                                    "Completed with overall GPA of 3.54 and reseach was published with the topic \"Mesuerment of road Surface Undulations using a low cost accelerometer sensor\"",
                                                     style: bodyFont(context)),
                                               ),
                                             ],
@@ -815,14 +819,17 @@ class portfolio extends StatelessWidget {
                     onPressed: () {
                       launchURL();
                     },
-                    child: Text(
-                      "Download Resume",
-                      style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(height: 1.5),
-                        //fontWeight: FontWeight.w700,
-                        fontSize: swidth > sheigth && swidth > 800
-                            ? swidth * 0.015
-                            : 12.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Text(
+                        "Download Resume",
+                        style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(height: 1.5),
+                          //fontWeight: FontWeight.w700,
+                          fontSize: swidth > sheigth && swidth > 800
+                              ? swidth * 0.013
+                              : 12.0,
+                        ),
                       ),
                     ),
                   ),
@@ -841,31 +848,78 @@ TextStyle headingFont1(context) {
   var _height = MediaQuery.of(context).size.height;
   //print(_width);
   //print(_height);
-  return GoogleFonts.poppins(
-    fontSize: _width > _height && _width > 800 ? _width * 0.017 : 13.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.black,
-  );
+  if (_width > 900) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.014 : 13.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  } else if (_width > 520) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.016 : 13.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  } else {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.017 : 13.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  }
+  // return GoogleFonts.poppins(
+  //   fontSize: _width > _height && _width > 800 ? _width * 0.017 : 13.0,
+  //   fontWeight: FontWeight.bold,
+  //   color: Colors.black,
+  // );
 }
 
 TextStyle headingFont2(context) {
   var _width = MediaQuery.of(context).size.width;
   var _height = MediaQuery.of(context).size.height;
-  return GoogleFonts.poppins(
-    fontSize: _width > _height && _width > 800 ? _width * 0.015 : 12.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.black,
-  );
+  if (_width > 900) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.012 : 12.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  } else if (_width > 520) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.014 : 12.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  } else {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.015 : 12.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  }
 }
 
 TextStyle bodyFont(context) {
   var _width = MediaQuery.of(context).size.width;
   var _height = MediaQuery.of(context).size.height;
-  return GoogleFonts.poppins(
-    fontSize: _width > _height && _width > 800 ? _width * 0.015 : 12.0,
-    fontWeight: FontWeight.normal,
-    color: Colors.black,
-  );
+  if (_width > 900) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.012 : 12.0,
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+    );
+  } else if (_width > 520) {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.014 : 12.0,
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+    );
+  } else {
+    return GoogleFonts.poppins(
+      fontSize: _width > _height ? _width * 0.015 : 12.0,
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+    );
+  }
 }
 
 void launchURL() async => await canLaunch(

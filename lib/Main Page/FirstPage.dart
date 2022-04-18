@@ -29,18 +29,9 @@ class _TopPageState extends State<TopPage> {
                 spacing: swidth * 0.03,
                 children: [
                   SizedBox(
-                    width: swidth > 540 ? swidth * 0.3 : sheigth * 0.3,
-                    height: swidth > 540 ? sheigth * 0.8 : sheigth * 0.5,
+                    width: swidth > 540 ? swidth * 0.25 : sheigth * 0.3,
+                    height: swidth > 540 ? sheigth * 0.7 : sheigth * 0.5,
                     child: Container(
-                      // //color: Color.fromARGB(0, 5, 5, 61),
-                      // width: swidth > 650 ? swidth * 0.3 : sheigth * 0.4,
-                      // // swidth.toDouble() * 0.45 < sheigth.toDouble() * 0.93
-                      // //     ? swidth.toDouble() * 0.3
-                      // //     : sheigth.toDouble() * 0.6,
-                      // height: swidth > 650 ? swidth * 0.45 : sheigth * 0.6,
-                      // // swidth.toDouble() * 0.45 < sheigth.toDouble() * 0.93
-                      // //     ? swidth.toDouble() * 0.45
-                      // //     : sheigth.toDouble() * 0.9,
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
                         image: DecorationImage(
@@ -115,14 +106,17 @@ class _TopPageState extends State<TopPage> {
                                 MaterialPageRoute(
                                     builder: (context) => const portfolio()));
                           },
-                          child: Text(
-                            "Protfolio",
-                            style: GoogleFonts.poppins(
-                              fontSize: swidth > sheigth && swidth > 800
-                                  ? swidth * 0.015
-                                  : 12.0,
-                              fontWeight: FontWeight.normal,
-                              //color: Color.fromARGB(255, 255, 255, 255),
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Text(
+                              "Protfolio",
+                              style: GoogleFonts.poppins(
+                                fontSize: swidth > sheigth && swidth > 800
+                                    ? swidth * 0.014
+                                    : 12.0,
+                                fontWeight: FontWeight.normal,
+                                //color: Color.fromARGB(255, 255, 255, 255),
+                              ),
                             ),
                           ),
                         ),
