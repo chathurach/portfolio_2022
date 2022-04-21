@@ -101,6 +101,9 @@ class portfolio extends StatelessWidget {
                                   color: Colors.black,
                                   thickness: 0.5,
                                 ),
+                                SizedBox(
+                                  height: sheigth * 0.015,
+                                ),
                                 Text(
                                   "Full Name",
                                   style: headingFont2(context),
@@ -131,6 +134,7 @@ class portfolio extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Icon(
                                       FontAwesomeIcons.phone,
@@ -151,6 +155,9 @@ class portfolio extends StatelessWidget {
                                   height: 1.0,
                                   color: Colors.black,
                                   thickness: 0.5,
+                                ),
+                                SizedBox(
+                                  height: sheigth * 0.015,
                                 ),
                                 Text(
                                   "Address",
@@ -176,6 +183,7 @@ class portfolio extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Icon(
                                       FontAwesomeIcons.graduationCap,
@@ -197,11 +205,15 @@ class portfolio extends StatelessWidget {
                                   color: Colors.black,
                                   thickness: 0.5,
                                 ),
+                                SizedBox(
+                                  height: sheigth * 0.015,
+                                ),
                                 Text(
                                   "Software Packages",
                                   style: headingFont2(context),
                                 ),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -213,6 +225,7 @@ class portfolio extends StatelessWidget {
                                   ],
                                 ),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -225,6 +238,7 @@ class portfolio extends StatelessWidget {
                                   ],
                                 ),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -238,6 +252,7 @@ class portfolio extends StatelessWidget {
                                 Text("Programming",
                                     style: headingFont2(context)),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -250,6 +265,7 @@ class portfolio extends StatelessWidget {
                                   ],
                                 ),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -262,6 +278,7 @@ class portfolio extends StatelessWidget {
                                   ],
                                 ),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -287,6 +304,7 @@ class portfolio extends StatelessWidget {
                               //   width: swidth * 0.5,
                               // ),
                               Row(
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.briefcase,
@@ -307,6 +325,9 @@ class portfolio extends StatelessWidget {
                                 height: 1.0,
                                 color: Colors.black,
                                 thickness: 0.5,
+                              ),
+                              SizedBox(
+                                height: sheigth * 0.015,
                               ),
                               Table(
                                 columnWidths: const {
@@ -330,6 +351,7 @@ class portfolio extends StatelessWidget {
                                               "Material Engineer - Road Development Authority",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -345,6 +367,7 @@ class portfolio extends StatelessWidget {
                                             ],
                                           ),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -360,6 +383,7 @@ class portfolio extends StatelessWidget {
                                             ],
                                           ),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -394,6 +418,7 @@ class portfolio extends StatelessWidget {
                                               "Material Engineer - Matara Hakmana Road Project",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -409,6 +434,7 @@ class portfolio extends StatelessWidget {
                                             ],
                                           ),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -443,6 +469,7 @@ class portfolio extends StatelessWidget {
                                               "Trainee Material Engineer - Matara Hakmana Road Project",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -458,6 +485,7 @@ class portfolio extends StatelessWidget {
                                             ],
                                           ),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -514,6 +542,9 @@ class portfolio extends StatelessWidget {
                                 color: Colors.black,
                                 thickness: 0.5,
                               ),
+                              SizedBox(
+                                height: sheigth * 0.015,
+                              ),
                               Table(
                                 columnWidths: const {
                                   0: FlexColumnWidth(1),
@@ -536,6 +567,7 @@ class portfolio extends StatelessWidget {
                                               "Master of Engineering in Highway & Traffic Engineering",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -570,6 +602,7 @@ class portfolio extends StatelessWidget {
                                               "Honours Degree of Bachelor of the Science of Engineering",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -604,6 +637,7 @@ class portfolio extends StatelessWidget {
                                               "G.C.E. Advanced Level Examination in Physical Sicence",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -638,6 +672,7 @@ class portfolio extends StatelessWidget {
                                               "G.C.E. Ordinary Level Examination",
                                               style: headingFont2(context)),
                                           Row(
+                                            mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -673,6 +708,7 @@ class portfolio extends StatelessWidget {
                               //   width: swidth * 0.5,
                               // ),
                               Row(
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.certificate,
@@ -693,6 +729,9 @@ class portfolio extends StatelessWidget {
                                 height: 1.0,
                                 color: Colors.black,
                                 thickness: 0.5,
+                              ),
+                              SizedBox(
+                                height: sheigth * 0.015,
                               ),
                               Table(
                                 columnWidths: const {
@@ -755,6 +794,7 @@ class portfolio extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
+                                mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.handshake,
@@ -775,6 +815,9 @@ class portfolio extends StatelessWidget {
                                 height: 1.0,
                                 color: Colors.black,
                                 thickness: 0.5,
+                              ),
+                              SizedBox(
+                                height: sheigth * 0.015,
                               ),
                               Table(
                                 columnWidths: const {

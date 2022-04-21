@@ -1,7 +1,9 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:new_portfolio/Main Page/NavigationBar.dart';
 import 'package:new_portfolio/Portfolio%20Page/Portfolio.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class TopPage extends StatefulWidget {
   @override
@@ -9,6 +11,15 @@ class TopPage extends StatefulWidget {
 }
 
 class _TopPageState extends State<TopPage> {
+  final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
+  Future sendAnalyticsEvent(
+      {required String eventName, String? clickevent}) async {
+    await _analytics.logEvent(
+      name: eventName,
+      //parameters: <String, dynamic>{'clickEvent': clickevent},
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var swidth = MediaQuery.of(context).size.width;
@@ -101,6 +112,7 @@ class _TopPageState extends State<TopPage> {
                             ),
                           ),
                           onPressed: () {
+                            sendAnalyticsEvent(eventName: "View Resume");
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
