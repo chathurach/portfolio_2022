@@ -1,11 +1,12 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:new_portfolio/Main Page/NavigationBar.dart';
-import 'package:new_portfolio/Portfolio%20Page/Portfolio.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:new_portfolio/Main%20Page/navigation_bar.dart';
+import 'package:new_portfolio/Portfolio%20Page/portfolio_page.dart';
 
 class TopPage extends StatefulWidget {
+  const TopPage({Key? key}) : super(key: key);
+
   @override
   State<TopPage> createState() => _TopPageState();
 }
@@ -95,7 +96,7 @@ class _TopPageState extends State<TopPage> {
                         SizedBox(
                           height: sheigth * 0.015,
                         ),
-                        navBarTop(
+                        NavBarTop(
                             containerWidth:
                                 swidth > 540 ? swidth * 0.35 : swidth * 0.6),
                         SizedBox(
@@ -116,7 +117,7 @@ class _TopPageState extends State<TopPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const portfolio()));
+                                    builder: (context) => const Portfolio()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(2.0),

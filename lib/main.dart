@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:new_portfolio/Portfolio%20Page/Portfolio.dart';
-import 'Main Page/FirstPage.dart';
-import 'Portfolio Page/Portfolio.dart';
+import 'Main Page/first_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_analytics/observer.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'Services/firebase_config.dart';
 
 void main() async {
@@ -49,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
       ),
-      home: TopPage(),
+      home: const TopPage(),
     );
   }
 }

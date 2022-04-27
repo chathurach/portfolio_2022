@@ -1,12 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class portfolio extends StatelessWidget {
-  const portfolio({Key? key}) : super(key: key);
+class Portfolio extends StatelessWidget {
+  const Portfolio({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +32,7 @@ class portfolio extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "A.W.C. Chamikara",
+                        "Chathura Chamikara",
                         style: GoogleFonts.poppins(
                           fontSize: swidth > sheigth ? swidth * 0.06 : 25.0,
                           fontWeight: FontWeight.bold,
@@ -110,10 +108,10 @@ class portfolio extends StatelessWidget {
                                 ),
                                 Text("Ahangama Walawage Chathura Chamikara",
                                     style: bodyFont(context)),
-                                Text("Date of Birth",
-                                    style: headingFont2(context)),
-                                Text("22nd September 1989",
-                                    style: bodyFont(context)),
+                                // Text("Date of Birth",
+                                //     style: headingFont2(context)),
+                                // Text("22nd September 1989",
+                                //     style: bodyFont(context)),
                                 Text("Gender", style: headingFont2(context)),
                                 Text("Male", style: bodyFont(context)),
                                 Text("Marital Status",
@@ -159,15 +157,15 @@ class portfolio extends StatelessWidget {
                                 SizedBox(
                                   height: sheigth * 0.015,
                                 ),
-                                Text(
-                                  "Address",
-                                  style: headingFont2(context),
-                                ),
-                                Text("308/36A, Medahena Road, Welegoda, Matara",
-                                    style: bodyFont(context)),
-                                Text("Phone", style: headingFont2(context)),
-                                Text("+9471 014 8315",
-                                    style: bodyFont(context)),
+                                // Text(
+                                //   "Address",
+                                //   style: headingFont2(context),
+                                // ),
+                                // Text("308/36A, Medahena Road, Welegoda, Matara",
+                                //     style: bodyFont(context)),
+                                // Text("Phone", style: headingFont2(context)),
+                                // Text("+9471 014 8315",
+                                //     style: bodyFont(context)),
                                 Text("Email", style: headingFont2(context)),
                                 Text("chathuracha@gmail.com",
                                     style: bodyFont(context)),
