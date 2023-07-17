@@ -1,7 +1,10 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio_page.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
+import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio.dart';
+import 'package:new_portfolio/Projects%20Page/projects.dart';
+import 'package:new_portfolio/Utils/custom_button.dart';
 import 'package:new_portfolio/Utils/strings.dart';
 import 'navigation_bar.dart';
 
@@ -48,59 +51,67 @@ class DesktopFirstPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Chathura Chamikara",
-                        style: Theme.of(context).textTheme.titleLarge,
-                        softWrap: true,
+                    children: AnimationConfiguration.toStaggeredList(
+                      duration: const Duration(milliseconds: 375),
+                      childAnimationBuilder: (widget) => SlideAnimation(
+                        horizontalOffset: MediaQuery.of(context).size.width / 2,
+                        child: FadeInAnimation(child: widget),
                       ),
-                      const SizedBox(height: 5.0),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
-                        child: Text(
-                          Strings.description,
+                      children: [
+                        Text(
+                          "Chathura Chamikara",
+                          style: Theme.of(context).textTheme.titleLarge,
                           softWrap: true,
-                          style: Theme.of(context).textTheme.titleMedium,
                         ),
-                      ),
-                      const SizedBox(height: 5.0),
-                      NavBarTop(
-                          containerWidth:
-                              swidth > 540 ? swidth * 0.35 : swidth * 0.6),
-                      const SizedBox(height: 10.0),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            foregroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.black),
-                            overlayColor: MaterialStateProperty.all(
-                              const Color.fromARGB(255, 125, 125, 125),
-                            ),
+                        const SizedBox(height: 5.0),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5.0),
+                          child: Text(
+                            Strings.description,
+                            softWrap: true,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
-                          onPressed: () {
-                            sendAnalyticsEvent(eventName: "View Resume");
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ResponsivePortfolio()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: Text(
-                              "Protfolio",
-                              style: GoogleFonts.poppins(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.normal,
+                        ),
+                        const SizedBox(height: 5.0),
+                        NavBarTop(
+                            containerWidth:
+                                swidth > 540 ? swidth * 0.35 : swidth * 0.6),
+                        const SizedBox(height: 10.0),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5.0),
+                          child: Row(
+                            children: [
+                              CustomElevatedButton(
+                                name: "Projects",
+                                function: () {
+                                  sendAnalyticsEvent(
+                                      eventName: "View Projects");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ProjectsPage()));
+                                },
                               ),
-                            ),
+                              const SizedBox(
+                                width: 20.0,
+                              ),
+                              CustomElevatedButton(
+                                name: "Portfolio",
+                                function: () {
+                                  sendAnalyticsEvent(eventName: "View Resume");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ResponsivePortfolioPage()));
+                                },
+                              )
+                            ],
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],

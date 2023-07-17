@@ -118,4 +118,8 @@ class Strings {
       "The Colony Counter app helps to count the bacteria colonies which are grown in a culture plate. For the brain of this app, YOLOv5s machine-learning model was trained on a custom dataset which was collected and hand-labeled for the task. The app is created with Flutter and flutter_tflite package.";
   static const welfareApp =
       "This project was carried out to help the welfare society of the Research and Development Division, Road Development Authority. The welfare library app contains details of over 800 books and helps to find and borrow books through the web app. This was developed with Flutter web and Firebase.";
+  static const research1 =
+      "This research was carried out to introduce alternative low-cost pavement conditions monitoring systems to the existing methods. Chamikara A.W.C., Pasindu H.R., Measurement of Road Surface Undulations Using a Low-cost Accelerometer Sensor, Proceedings of the Transportation Research Forum 2019 (pp. 39-40). Department of Civil Engineering, University of Moratuwa, Sri Lanka.";
+  static const research2 =
+      "This research is a technical demonstration of controlling traffic signals based on real-time data using a neural network-based algorithm. Proceedings of the Transportation Research Forum 2022, Department of Civil Engineering, University of Moratuwa, Sri Lanka.";
 }

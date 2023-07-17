@@ -69,15 +69,19 @@ class SubItem extends StatelessWidget {
   final Map item;
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Row(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ConstrainedBox(
-          constraints: const BoxConstraints(minWidth: 150.0),
+          constraints: BoxConstraints(
+              minWidth: screenWidth > 400.0 ? 150.0 : 80.0,
+              maxWidth: screenWidth > 400 ? 200.0 : 80.0),
           child: Text(
             item['duration'].toString(),
             style: Theme.of(context).textTheme.labelMedium,
+            softWrap: true,
           ),
         ),
         const SizedBox(

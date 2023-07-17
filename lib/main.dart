@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:new_portfolio/Main%20Page/responsive_main_page.dart';
-import 'package:new_portfolio/Projects%20Page/projects.dart';
 import 'package:new_portfolio/Utils/text_theme.dart';
 import 'Services/firebase_config.dart';
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         textTheme: textTheme,
         primarySwatch: Colors.blue,
       ),
-      home: const ProjectsPage(),
+      home: const ResponsiveMainPage(),
     );
   }
 }

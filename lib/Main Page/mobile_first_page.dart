@@ -1,7 +1,9 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio_page.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio.dart';
+import 'package:new_portfolio/Utils/custom_button.dart';
+import '../Projects Page/projects.dart';
 import '../Utils/strings.dart';
 import 'navigation_bar.dart';
 
@@ -20,29 +22,33 @@ class MobileFirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final swidth = MediaQuery.of(context).size.width;
     return Material(
-      child: ListView(
-        padding: const EdgeInsets.all(15.0),
-        shrinkWrap: true,
-        children: [
-          SizedBox(
-            width: 300.0,
-            height: 300.0,
-            child: Image.asset(
-              'assets/images/image.jpg',
-            ),
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 300.0,
-              minHeight: 250.0,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: AnimationConfiguration.toStaggeredList(
+              duration: const Duration(milliseconds: 375),
+              childAnimationBuilder: (widget) => SlideAnimation(
+                horizontalOffset: MediaQuery.of(context).size.width / 2,
+                child: FadeInAnimation(child: widget),
+              ),
               children: [
+                Flexible(
+                  flex: 1,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 400.0),
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: Image.asset(
+                        'assets/images/image.jpg',
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
                 Text(
                   "Chathura Chamikara",
                   style: Theme.of(context).textTheme.titleLarge,
@@ -64,38 +70,39 @@ class MobileFirstPage extends StatelessWidget {
                 const SizedBox(height: 10.0),
                 Padding(
                   padding: const EdgeInsets.only(left: 5.0),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor: MaterialStateProperty.all(Colors.black),
-                      overlayColor: MaterialStateProperty.all(
-                        const Color.fromARGB(255, 125, 125, 125),
+                  child: Row(
+                    children: [
+                      CustomElevatedButton(
+                        name: "Projects",
+                        function: () {
+                          sendAnalyticsEvent(eventName: "View Projects");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ProjectsPage()));
+                        },
                       ),
-                    ),
-                    onPressed: () {
-                      sendAnalyticsEvent(eventName: "View Resume");
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ResponsivePortfolio()));
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(
-                        "Protfolio",
-                        style: GoogleFonts.poppins(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.normal,
-                        ),
+                      const SizedBox(
+                        width: 20.0,
                       ),
-                    ),
+                      CustomElevatedButton(
+                        name: "Portfolio",
+                        function: () {
+                          sendAnalyticsEvent(eventName: "View Resume");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ResponsivePortfolioPage()));
+                        },
+                      )
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
