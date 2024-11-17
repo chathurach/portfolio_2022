@@ -1,8 +1,9 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio.dart';
-import 'package:new_portfolio/Utils/custom_button.dart';
+import 'package:chathura_chamikara/Portfolio%20Page/responsive_portfolio.dart';
+import 'package:chathura_chamikara/Utils/custom_button.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 import '../Projects Page/projects.dart';
 import '../Utils/strings.dart';
 import 'navigation_bar.dart';
@@ -34,33 +35,36 @@ class MobileFirstPage extends StatelessWidget {
                 child: FadeInAnimation(child: widget),
               ),
               children: [
-                Flexible(
-                  flex: 1,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxHeight: 400.0),
-                    child: AspectRatio(
-                      aspectRatio: 1,
-                      child: Image.asset(
-                        'assets/images/image.jpg',
-                      ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 400.0),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Image.asset(
+                      'assets/images/image.jpg',
                     ),
                   ),
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                Text(
-                  "Chathura Chamikara",
-                  style: Theme.of(context).textTheme.titleLarge,
-                  softWrap: true,
+                TextRenderer(
+                  style: TextRendererStyle.header1,
+                  child: Text(
+                    "Chathura Chamikara",
+                    style: Theme.of(context).textTheme.titleLarge,
+                    softWrap: true,
+                  ),
                 ),
                 const SizedBox(height: 5.0),
                 Padding(
                   padding: const EdgeInsets.only(left: 5.0),
-                  child: Text(
-                    Strings.description,
-                    softWrap: true,
-                    style: Theme.of(context).textTheme.titleMedium,
+                  child: TextRenderer(
+                    style: TextRendererStyle.paragraph,
+                    child: Text(
+                      Strings.description,
+                      softWrap: true,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 5.0),

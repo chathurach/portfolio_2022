@@ -2,10 +2,11 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import 'package:new_portfolio/Portfolio%20Page/responsive_portfolio.dart';
-import 'package:new_portfolio/Projects%20Page/projects.dart';
-import 'package:new_portfolio/Utils/custom_button.dart';
-import 'package:new_portfolio/Utils/strings.dart';
+import 'package:chathura_chamikara/Portfolio%20Page/responsive_portfolio.dart';
+import 'package:chathura_chamikara/Projects%20Page/projects.dart';
+import 'package:chathura_chamikara/Utils/custom_button.dart';
+import 'package:chathura_chamikara/Utils/strings.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 import 'navigation_bar.dart';
 
 class DesktopFirstPage extends StatelessWidget {
@@ -58,18 +59,24 @@ class DesktopFirstPage extends StatelessWidget {
                         child: FadeInAnimation(child: widget),
                       ),
                       children: [
-                        Text(
-                          "Chathura Chamikara",
-                          style: Theme.of(context).textTheme.titleLarge,
-                          softWrap: true,
+                        TextRenderer(
+                          style: TextRendererStyle.header1,
+                          child: Text(
+                            "Chathura Chamikara",
+                            style: Theme.of(context).textTheme.titleLarge,
+                            softWrap: true,
+                          ),
                         ),
                         const SizedBox(height: 5.0),
                         Padding(
                           padding: const EdgeInsets.only(left: 5.0),
-                          child: Text(
-                            Strings.description,
-                            softWrap: true,
-                            style: Theme.of(context).textTheme.titleMedium,
+                          child: TextRenderer(
+                            style: TextRendererStyle.paragraph,
+                            child: Text(
+                              Strings.description,
+                              softWrap: true,
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 5.0),

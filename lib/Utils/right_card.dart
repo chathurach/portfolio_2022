@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class RightCard extends StatelessWidget {
   const RightCard({
@@ -13,52 +14,55 @@ class RightCard extends StatelessWidget {
   final List<Map> items;
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(
-        minWidth: 500.0,
-        maxWidth: 700.0,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10.0, top: 10.0),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(icon),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Expanded(
-                    child: Text(
-                      heading,
-                      style: Theme.of(context).textTheme.labelLarge,
-                      softWrap: true,
-                      overflow: TextOverflow.clip,
+    return IgnorePointer(
+      ignoring: true,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          minWidth: 500.0,
+          maxWidth: 700.0,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10.0, top: 10.0),
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(icon),
+                    const SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                ],
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                child: Divider(
-                  height: 1.0,
-                  color: Colors.black,
-                  thickness: 0.5,
+                    Expanded(
+                      child: Text(
+                        heading,
+                        style: Theme.of(context).textTheme.labelLarge,
+                        softWrap: true,
+                        overflow: TextOverflow.clip,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Flexible(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: items.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return SubItem(item: items[index]);
-                    }),
-              )
-            ]),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                  child: Divider(
+                    height: 1.0,
+                    color: Colors.black,
+                    thickness: 0.5,
+                  ),
+                ),
+                Flexible(
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: items.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return SubItem(item: items[index]);
+                      }),
+                )
+              ]),
+        ),
       ),
     );
   }
@@ -97,12 +101,15 @@ class SubItem extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium,
               ),
               ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: item['item'].length,
                 shrinkWrap: true,
                 itemBuilder: ((context, index) {
-                  return Text(
-                    item['item'][index].toString(),
-                    style: Theme.of(context).textTheme.labelSmall,
+                  return TextRenderer(
+                    child: Text(
+                      item['item'][index].toString(),
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
                   );
                 }),
               ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_portfolio/Utils/custom_button.dart';
-import 'package:new_portfolio/Utils/left_card.dart';
-import 'package:new_portfolio/Utils/right_card.dart';
-import 'package:new_portfolio/Utils/strings.dart';
+import 'package:chathura_chamikara/Utils/custom_button.dart';
+import 'package:chathura_chamikara/Utils/left_card.dart';
+import 'package:chathura_chamikara/Utils/right_card.dart';
+import 'package:chathura_chamikara/Utils/strings.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class DesktopPortfolioPage extends StatelessWidget {
@@ -39,14 +40,20 @@ class DesktopPortfolioPage extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: Text(
-                          "Chathura Chamikara",
-                          style: Theme.of(context).textTheme.titleLarge,
+                        child: TextRenderer(
+                          style: TextRendererStyle.header1,
+                          child: Text(
+                            "Chathura Chamikara",
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
                         ),
                       ),
-                      Text(
-                        "Material Engineer",
-                        style: Theme.of(context).textTheme.titleSmall,
+                      TextRenderer(
+                        style: TextRendererStyle.header2,
+                        child: Text(
+                          "Material Engineer",
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
                       ),
                       const SizedBox(
                         height: 20.0,

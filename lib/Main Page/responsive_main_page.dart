@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_portfolio/Main%20Page/desktop_first_page.dart';
-import 'package:new_portfolio/Main%20Page/mobile_first_page.dart';
+import 'package:chathura_chamikara/Main%20Page/desktop_first_page.dart';
+import 'package:chathura_chamikara/Main%20Page/mobile_first_page.dart';
 
 class ResponsiveMainPage extends StatefulWidget {
   const ResponsiveMainPage({Key? key}) : super(key: key);

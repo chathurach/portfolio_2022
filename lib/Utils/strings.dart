@@ -23,13 +23,13 @@ class Strings {
   };
   static const email = {
     "heading": "Email",
-    "item": ["chathuracha@gmai.com"]
+    "item": ["chathuracha@gmail.com"]
   };
   static const software = {
     "heading": "Software Packages",
     "item": [
       "*Microsoft Office package",
-      "*Adebe Photoshop, InDesign, Illustrator, Premier",
+      "*Adobe Photoshop, InDesign, Illustrator, Premier",
       "*Autodesk AutoCAD, Civil 3D"
     ]
   };

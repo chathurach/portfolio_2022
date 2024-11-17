@@ -1,5 +1,5 @@
-name: new_portfolio
-description: A new Flutter project.
+name: chathura_chamikara
+description: Chathura Chamikara, Material Engineer, Road Development Authority
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,6 +41,7 @@ dependencies:
   firebase_analytics: ^10.4.3
   flutter_staggered_grid_view: ^0.6.2
   flutter_staggered_animations: ^1.1.1
+  seo_renderer: ^0.6.0
 
 dev_dependencies:
   flutter_test:

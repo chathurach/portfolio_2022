@@ -1,4 +1,3 @@
-import 'dart:js_interop';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -43,7 +42,7 @@ class ProjectCard extends StatelessWidget {
                               //overflow: TextOverflow.fade,
                             ),
                           ),
-                          buttonText.isNull || buttonIcon.isNull
+                          buttonText == null || buttonIcon == null
                               ? const SizedBox()
                               : Align(
                                   alignment: Alignment.bottomLeft,
@@ -117,7 +116,7 @@ class ProjectCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  buttonText.isNull || buttonIcon.isNull
+                  buttonText == null || buttonIcon == null
                       ? const SizedBox()
                       : Padding(
                           padding: const EdgeInsets.all(8.0),

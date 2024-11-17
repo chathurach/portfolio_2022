@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "sharedexpense",
+      "package_name": "com.cchamikara.sharedexpense",
+      "sha256_cert_fingerprints":
+      ["cf:91:be:46:ef:a6:e5:66:0e:f2:20:3b:f6:ee:43:4b:cd:93:7c:9f:dc:3d:46:e6:d3:34:f1:3e:30:d8:3e:f3","d0:fd:ca:5c:a3:fb:3a:19:6b:9f:70:8a:92:b0:cb:3f:ef:2c:c9:ee:de:24:8c:d7:fb:8f:d5:3f:6a:5c:7c:26"]
+    }
+  }]

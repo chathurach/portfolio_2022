@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:new_portfolio/Projects%20Page/project_card.dart';
-import 'package:new_portfolio/Utils/custom_button.dart';
-import 'package:new_portfolio/Utils/strings.dart';
+import 'package:chathura_chamikara/Projects%20Page/project_card.dart';
+import 'package:chathura_chamikara/Utils/custom_button.dart';
+import 'package:chathura_chamikara/Utils/strings.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -59,7 +59,7 @@ class ProjectsPage extends StatelessWidget {
                     height: 20.0,
                   ),
                   const ProjectCard(
-                    image: "assets/images/research_1.png",
+                    image: "assets/images/research_1.PNG",
                     description: Strings.research1,
                     buttonIcon: FontAwesomeIcons.link,
                     buttonText: "University of Moratuwa",
